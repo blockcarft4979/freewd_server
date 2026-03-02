@@ -1,46 +1,397 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <title>404 - 页面走丢了</title>
-    <meta http-equiv="refresh" content="0;url=/reward/not_found.mp4">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4db8ff;
+            --primary-light: #66cfff;
+            --primary-dark: #0077cc;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-tertiary: rgba(255, 255, 255, 0.4);
+            --bg-color: #0f0f0f;
+        }
+
         body {
             margin: 0;
-            background: #0f0f0f;
-            color: #ffffff;
-            font-family: "Microsoft YaHei", sans-serif;
+            background: var(--bg-color);
+            color: var(--text-primary);
+            font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
+            padding: 1rem;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 600px;
+            padding: 2rem;
         }
 
         h1 {
-            font-size: 72px;
-            margin-bottom: 10px;
+            font-size: clamp(4rem, 15vw, 6rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+            letter-spacing: -0.025em;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 4px 20px rgba(77, 184, 255, 0.3);
         }
 
-        p {
+        .subtitle {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: var(--text-primary);
+        }
+
+        .message {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
             opacity: 0.7;
-            margin-bottom: 20px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
         }
 
         .hint {
-            font-size: 14px;
+            font-size: clamp(0.8rem, 2vw, 1rem);
             opacity: 0.4;
+            color: var(--text-tertiary);
+            margin-top: 2rem;
+        }
+
+        .redirect-info {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            opacity: 0.6;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .animation-container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            margin: 0 auto 2rem;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .circle-1 {
+            width: 150px;
+            height: 150px;
+            top: 25px;
+            left: 25%;
+            background: radial-gradient(circle, var(--primary-color), transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .circle-2 {
+            width: 100px;
+            height: 100px;
+            top: 50px;
+            right: 20%;
+            background: radial-gradient(circle, var(--primary-light), transparent 70%);
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .circle-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 20px;
+            left: 30%;
+            background: radial-gradient(circle, var(--primary-dark), transparent 70%);
+            animation: float 7s ease-in-out infinite 1s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.05);
+            }
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            box-shadow: 0 4px 12px rgba(77, 184, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(77, 184, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: clamp(3rem, 12vw, 4rem);
+            }
+            
+            .subtitle {
+                font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+            }
+            
+            .message {
+                font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .message {
+                font-size: 0.9rem;
+            }
+            
+            .animation-container {
+                max-width: 200px;
+                height: 150px;
+            }
+            
+            .circle-1 {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .circle-2 {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .circle-3 {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* 横屏模式优化 */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .content {
+                max-width: 90%;
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .animation-container {
+                max-width: 150px;
+                height: 100px;
+            }
+            
+            .circle-1 {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .circle-2 {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .circle-3 {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* 深色模式优化 */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0a0a0a;
+            }
+            
+            body {
+                background: var(--bg-color);
+            }
+        }
+
+        /* 减少动画 */
+        @media (prefers-reduced-motion: reduce) {
+            .circle {
+                animation: none;
+            }
         }
     </style>
 
 </head>
+
 <body>
+    <div class="container">
+        <div class="content">
+            <!-- 动画背景 -->
+            <div class="animation-container">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+            </div>
 
-    <h1>404</h1>
-    <p>页面好像迷路了…</p>
-    <div class="hint">Freewd 4.0 © 2024-2026</div>
+            <!-- 主内容 -->
+            <h1>404</h1>
+            <div class="subtitle">页面好像迷路了…</div>
+            <p class="message">我们找不到您要访问的页面，可能是页面已被移动或暂时不可用。</p>
+            
+            <div class="redirect-info">
+                正在为您跳转到首页，请稍候…
+            </div>
 
+            <!-- 操作按钮 -->
+            <div class="action-buttons">
+                <a href="/" class="btn btn-primary">
+                    <i class="fas fa-home"></i> 返回首页
+                </a>
+                <a href="javascript:history.back()" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> 返回上一页
+                </a>
+            </div>
+
+            <div class="hint">Freewd 4.0 © 2024-2026</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 检测设备类型
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            // 如果检测到移动设备，可以添加特定处理
+            if (isMobile) {
+                document.body.classList.add('mobile-device');
+            }
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // 倒计时显示
+            let countdown = 3;
+            const redirectInfo = document.querySelector('.redirect-info');
+            
+            const countdownInterval = setInterval(() => {
+                if (countdown > 1) {
+                    countdown--;
+                    redirectInfo.textContent = `${countdown} 秒后自动跳转到首页…`;
+                } else {
+                    clearInterval(countdownInterval);
+                }
+            }, 1000);
+        });
+    </script>
 </body>
+
 </html>
