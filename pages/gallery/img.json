@@ -1,0 +1,46 @@
+{
+  "images": [
+    {
+      "filename": "default(1).jpeg",
+      "title": "Freewd 4.0 关服合照",
+      "desc": "Freewd 4.0版本结束时的社区大合照",
+      "filter": ["4.0", "group"],
+      "date": "2026-03-01"
+    },
+    {
+      "filename": "default(2).jpeg",
+      "title": "玩家合影",
+      "desc": "玩家们在游戏中的合影留念",
+      "filter": ["4.0", "daily"],
+      "date": "2026-02-28"
+    },
+    {
+      "filename": "default(3).jpeg",
+      "title": "玩家合影",
+      "desc": "玩家们在游戏中的合影留念",
+      "filter": ["4.0", "build"],
+      "date": "2025-11-22"
+    },
+    {
+      "filename": "default(4).jpeg",
+      "title": "玩家合影",
+      "desc": "玩家们在游戏中的合影留念",
+      "filter": ["4.0", "daily"],
+      "date": "2026-01-30"
+    },
+    {
+      "filename": "default(5).jpeg",
+      "title": "竹亭",
+      "desc": "作者：lanyuchen1314",
+      "filter": ["4.0", "build"],
+      "date": "2026-02-10"
+    },
+    {
+      "filename": "default(6).jpeg",
+      "title": "Freewd第一大菜田",
+      "desc": "Freewd 1.0版本中最大的菜田，见证了无数玩家的辛勤耕作",
+      "filter": ["1.0", "daily"],
+      "date": "2026-02-20"
+    }
+  ]
+}
