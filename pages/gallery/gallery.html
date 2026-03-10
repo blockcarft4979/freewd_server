@@ -622,6 +622,11 @@
             
             <div class="filter-buttons fade-in">
                 <button class="filter-btn active" data-filter="all">全部图片</button>
+                <button class="filter-btn" data-filter="3.0">Freewd 3.0</button>
+                <button class="filter-btn" data-filter="4.0">Freewd 4.0</button>
+                <button class="filter-btn" data-filter="group">合照</button>
+                <button class="filter-btn" data-filter="build">建筑</button>
+                <button class="filter-btn" data-filter="daily">日常</button>
             </div>
         </div>
     </section>
@@ -663,11 +668,11 @@
                         <img src="/img/index/FreewdIcon.png" alt="Freewd服务器" class="logo-img">
                         <span class="logo-text">Freewd服务器图片画廊</span>
                     </div>
-                    <p>自动加载 /img/gallery 文件夹中的图片，记录Freewd服务器的精彩瞬间</p>
+                    <p>Freewd服务器的精彩瞬间</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 BLOCKCARFT. 图片版权归Freewd服务器社区所有</p>
+                <p>&copy; 2026 BLOCKCARFT.</p>
             </div>
         </div>
     </footer>
@@ -676,7 +681,7 @@
         // 配置文件
         const CONFIG = {
             imagesJsonUrl: 'pages/gallery/img.json',  // JSON数据文件路径
-            galleryFolder: '/img/gallery/',      // 图片文件夹路径
+            galleryFolder: 'img/gallery/',      // 图片文件夹路径
             imagesPerPage: 12                     // 每页显示图片数量
         };
         
@@ -749,6 +754,7 @@
                 console.error("加载图片时出错:", error);
                 loadingElement.style.display = 'none';
                 showError(`无法加载图片: ${error.message}`);
+            }
         }
         
         // 显示错误信息
@@ -979,7 +985,7 @@
         // 图片加载失败时的备用图片
         window.addEventListener('error', function(e) {
             if (e.target.tagName === 'IMG' && e.target.src.includes(CONFIG.galleryFolder)) {
-                e.target.src = '/img/placeholder.jpg'; // 备用图片
+                e.target.src = 'img/freewd_title.png'; // 备用图片
                 e.target.alt = '图片加载失败';
             }
         }, true);
