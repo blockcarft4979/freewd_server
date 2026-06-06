@@ -6,571 +6,407 @@
     <meta name='description' content='欢迎来到 Freewd 5.0服务器官方网站，公益服务器 · 纯净无收费 · 透明开放，欢迎每一位玩家的加入与监督！服务器版本：1.26.x，开服时间：2026年6月20日中午12点' />
     <link rel="icon" type="image/png" href="/img/index/FreewdIcon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Freewd 基岩版 Minecraft 服务器 - 稳定纯净生存公益服｜支持 1.26.x</title>
+    <title>Freewd 基岩版 Minecraft 服务器</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-        
         :root {
-          --primary-color: #4db8ff;
-          --primary-light: #66cfff;
-          --primary-dark: #0077cc;
-          --secondary-color: #f59e0b;
-          --text-primary: #e0e0e0;
-          --text-secondary: #a0a0a0;
-          --bg-light: #111;
-          --bg-white: #0f0f0f;
-          --bg-card: rgba(30, 30, 30, 0.9);
-          --border-color: rgba(100, 100, 100, 0.2);
-          --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
-          --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-          --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-          --radius-sm: 0.375rem;
-          --radius-md: 0.5rem;
-          --radius-lg: 0.75rem;
-          --radius-xl: 1rem;
-          --radius-full: 9999px;
-          --navbar-height: 4.5rem;
+            --md-sys-color-primary: #0468C0;
+            --md-sys-color-on-primary: #ffffff;
+            --md-sys-color-primary-container: #084c8a;
+            --md-sys-color-surface: #0f0f12;
+            --md-sys-color-surface-variant: #1e1e24;
+            --md-sys-color-on-surface: #e3e3e8;
+            --md-sys-color-on-surface-variant: #b8b8c4;
+            --md-sys-color-outline: #3e3e48;
+            --md-sys-color-secondary: #b0b0c0;
+            --md-sys-color-error: #cf6679;
+            --md-ref-typeface-brand: 'Inter', -apple-system, BlinkMacSystemFont, system-ui;
+            --md-ref-typeface-plain: 'Inter', sans-serif;
+            --md-ref-shape-small: 8px;
+            --md-ref-shape-medium: 16px;
+            --md-ref-shape-large: 28px;
+            --md-ref-shape-extra-large: 36px;
+            --md-ref-elevation-1: 0 1px 3px 1px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.3);
+            --md-ref-elevation-2: 0 2px 6px 2px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.3);
+            --md-ref-elevation-3: 0 4px 8px 3px rgba(0,0,0,0.15), 0 1px 3px 0 rgba(0,0,0,0.3);
+            --navbar-height: 4.5rem;
         }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          line-height: 1.6;
-          color: var(--text-primary);
-          background-color: var(--bg-light);
-          overflow-x: hidden;
-          background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-          background-size: cover;
-          background-position: center;
-          background-attachment: fixed;
-          padding-top: var(--navbar-height);
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            font-family: var(--md-ref-typeface-plain);
+            line-height: 1.5;
+            padding-top: var(--navbar-height);
+            scroll-behavior: smooth;
         }
-        
+
         .container {
-          width: 100%;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
-        
+
+        /* 导航栏 M3 风格 */
         .navbar {
-          position: fixed;
-          top: 0;
-          width: 100%;
-          background-color: rgba(15, 15, 20, 0.9);
-          backdrop-filter: blur(10px);
-          z-index: 1000;
-          box-shadow: var(--shadow-sm);
-          transition: all 0.3s ease;
-          height: var(--navbar-height);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 18, 0.85);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            height: var(--navbar-height);
+            box-shadow: var(--md-ref-elevation-1);
         }
-        
+
         .nav-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 1rem 1.5rem;
-          max-width: 1200px;
-          margin: 0 auto;
-          height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 0 24px;
         }
-        
+
         .nav-logo {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
         }
-        
+
         .logo-img {
-          height: 2.5rem;
-          width: 2.5rem;
-          border-radius: 8px;
-          filter: drop-shadow(0 2px 4px rgba(77, 184, 255, 0.2));
-          object-fit: contain;
+            height: 40px;
+            width: auto;
+            border-radius: 12px;
         }
-        
+
         .logo-text {
-          font-size: 1.5rem;
-          font-weight: 700;
-          background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #80caff, #0468C0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
         }
-        
+
+        /* Hero 区域 */
         .hero {
-          padding: 4rem 0 6rem;
-          background: linear-gradient(135deg, rgba(10, 10, 15, 0.9) 0%, rgba(20, 20, 30, 0.8) 100%);
-          position: relative;
-          overflow: hidden;
+            padding: 48px 0 80px;
+            background: radial-gradient(circle at 10% 30%, rgba(4,104,192,0.08), transparent 70%);
         }
-        
-        .hero::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 100%;
-          background:
-            radial-gradient(circle at 20% 80%, rgba(77, 184, 255, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
-          z-index: 0;
-        }
-        
+
         .hero-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 1.5rem;
-          position: relative;
-          z-index: 1;
-          min-height: calc(100vh - var(--navbar-height));
-        }
-        
-        .hero-content {
-          flex: 1;
-          max-width: 600px;
-          margin-bottom: 3rem;
-        }
-        
-        .hero-title {
-          font-size: 3rem;
-          font-weight: 800;
-          line-height: 1.1;
-          margin-bottom: 1.5rem;
-          letter-spacing: -0.025em;
-        }
-        
-        .gradient-text {
-          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-          display: inline-block;
-        }
-        
-        .hero-description {
-          font-size: 1.25rem;
-          color: var(--text-secondary);
-          margin-bottom: 2.5rem;
-          max-width: 90%;
-        }
-        
-        .hero-buttons {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1rem;
-          justify-content: center;
-        }
-        
-        .btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0.875rem 2rem;
-          font-size: 1rem;
-          font-weight: 600;
-          border-radius: var(--radius-md);
-          border: none;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          text-decoration: none;
-          gap: 0.5rem;
-        }
-        
-        .btn-primary {
-          background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-          color: white;
-          box-shadow: 0 4px 12px rgba(77, 184, 255, 0.3);
-        }
-        
-        .btn-primary:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(77, 184, 255, 0.4);
-        }
-        
-        .btn-secondary {
-          background-color: rgba(255, 255, 255, 0.1);
-          color: var(--text-primary);
-          border: 1px solid var(--border-color);
-        }
-        
-        .btn-secondary:hover {
-          border-color: var(--primary-color);
-          color: var(--primary-color);
-          transform: translateY(-2px);
-          box-shadow: var(--shadow-md);
-        }
-        
-        .announcement-box {
-          background: linear-gradient(135deg, rgba(0, 60, 120, 0.2), rgba(0, 100, 200, 0.1));
-          border-radius: var(--radius-lg);
-          padding: 2rem;
-          margin: 2rem 0;
-          border-left: 4px solid var(--primary-color);
-          box-shadow: var(--shadow-md);
-        }
-        
-        .announcement-title {
-          font-size: 1.2rem;
-          color: var(--primary-light);
-          margin-bottom: 1rem;
-          text-align: left;
-          font-weight: 600;
-        }
-        
-        .announcement-content {
-          font-size: 0.8rem;
-          line-height: 1.8;
-          color: var(--text-primary);
-          text-align: left;
-        }
-        
-        .version-box {
-          display: inline-block;
-          background: rgba(0, 80, 160, 0.3);
-          padding: 8px 20px;
-          border-radius: var(--radius-full);
-          margin-top: 15px;
-          font-weight: bold;
-          color: var(--primary-light);
-          border: 1px solid rgba(100, 180, 255, 0.3);
-        }
-        
-        .countdown {
-          text-align: center;
-          font-size: 1.8rem;
-          color: var(--primary-color);
-          margin: 2rem 0 3rem;
-          font-weight: bold;
-          text-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
-          padding: 1.5rem;
-          background: rgba(0, 0, 0, 0.3);
-          border-radius: var(--radius-lg);
-          border: 1px solid var(--border-color);
-        }
-        
-        .features {
-          padding: 6rem 0;
-          background-color: var(--bg-white);
-        }
-        
-        .section-title {
-          text-align: center;
-          font-size: 2.5rem;
-          font-weight: 700;
-          margin-bottom: 1rem;
-          color: var(--text-primary);
-        }
-        
-        .section-subtitle {
-          text-align: center;
-          font-size: 1.125rem;
-          color: var(--text-secondary);
-          margin-bottom: 3rem;
-          max-width: 700px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        
-        .features-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-        
-        @media (min-width: 768px) {
-          .features-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-          
-          .hero-container {
-            flex-direction: row;
-          }
-        }
-        
-        .feature-card {
-          background-color: var(--bg-card);
-          border-radius: var(--radius-lg);
-          padding: 2rem;
-          box-shadow: var(--shadow-md);
-          border: 1px solid transparent;
-          transition: all 0.3s ease;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        
-        .feature-card:hover {
-          transform: translateY(-8px);
-          box-shadow: var(--shadow-lg);
-          border-color: var(--primary-light);
-        }
-        
-        .feature-icon {
-          width: 3.5rem;
-          height: 3.5rem;
-          border-radius: var(--radius-lg);
-          background: linear-gradient(135deg, rgba(77, 184, 255, 0.1), rgba(77, 184, 255, 0.05));
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 1.5rem;
-        }
-        
-        .feature-icon i {
-          font-size: 1.75rem;
-          color: var(--primary-color);
-        }
-        
-        .feature-card h3 {
-          font-size: 1.25rem;
-          font-weight: 600;
-          margin-bottom: 0.75rem;
-          color: var(--text-primary);
-        }
-        
-        .feature-card p {
-          color: var(--text-secondary);
-          line-height: 1.7;
-        }
-        
-        .gallery {
-          padding: 6rem 0;
-          background: linear-gradient(135deg, rgba(10, 10, 15, 0.9) 0%, rgba(20, 20, 30, 0.8) 100%);
-        }
-        
-        .gallery-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 3rem;
-        }
-        
-        .gallery-item {
-          width: 100%;
-          margin-bottom: 3rem;
-          text-align: center;
-        }
-        
-        .gallery-item h3 {
-          color: var(--primary-light);
-          margin-bottom: 1.5rem;
-          font-size: 1.5rem;
-        }
-        
-        .gallery-item img {
-          width: 100%;
-          max-width: 800px;
-          height: auto;
-          max-height: 500px;
-          object-fit: contain;
-          border-radius: var(--radius-lg);
-          box-shadow: var(--shadow-lg);
-          margin: 0 auto;
-          display: block;
-        }
-        
-        .single-image {
-          margin: 2rem 0;
-        }
-        
-        .single-image img {
-          width: 100%;
-          max-width: 800px;
-          height: auto;
-          max-height: 500px;
-          object-fit: contain;
-          border-radius: var(--radius-lg);
-          box-shadow: var(--shadow-lg);
-          margin: 0 auto;
-          display: block;
-        }
-        
-        .server-info {
-          padding: 4rem 0;
-          background-color: var(--bg-white);
-        }
-        
-        .info-cards {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-        
-        @media (min-width: 768px) {
-          .info-cards {
-            grid-template-columns: repeat(3, 1fr);
-          }
-        }
-        
-        .info-item {
-          background-color: var(--bg-card);
-          border-radius: var(--radius-lg);
-          padding: 2rem;
-          text-align: center;
-          box-shadow: var(--shadow-md);
-          border: 1px solid transparent;
-          transition: all 0.3s ease;
-        }
-        
-        .info-item:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-lg);
-          border-color: var(--primary-light);
-        }
-        
-        .info-item h4 {
-          font-size: 1.25rem;
-          color: var(--primary-light);
-          margin-bottom: 1rem;
-          font-weight: 600;
-        }
-        
-        .info-item p {
-          color: var(--text-secondary);
-          font-size: 1.1rem;
-        }
-        
-        .btn-group {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 1.5rem;
-          margin: 3rem 0;
-        }
-        
-        .btn-download {
-          background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-          color: white;
-          width: 100%;
-          max-width: 300px;
-          box-shadow: 0 4px 12px rgba(77, 184, 255, 0.3);
-        }
-        
-        .btn-download:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(77, 184, 255, 0.4);
-        }
-        
-        .footer {
-          background-color: var(--text-primary);
-          color: var(--bg-light);
-          padding: 4rem 0 2rem;
-          text-align: center;
-        }
-        
-        .footer-content {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 3rem;
-          margin-bottom: 3rem;
-        }
-        
-        .footer-logo {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.75rem;
-          margin-bottom: 1rem;
-        }
-        
-        .footer p {
-          color: #666;
-          line-height: 1.7;
-          max-width: 500px;
-          margin: 0 auto;
-        }
-        
-        .footer-bottom {
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          padding-top: 2rem;
-          text-align: center;
-          color: #888;
-          font-size: 0.875rem;
-        }
-        
-        @media (max-width: 768px) {
-          .hero-title {
-            font-size: 2.5rem;
-          }
-        
-          .hero-description {
-            font-size: 1.125rem;
-          }
-        
-          .section-title {
-            font-size: 2rem;
-          }
-        
-          .btn-group {
+            display: flex;
             flex-direction: column;
             align-items: center;
-          }
+            justify-content: center;
+            text-align: center;
+            min-height: calc(100vh - var(--navbar-height));
         }
-        
-        @media (max-width: 640px) {
-          body {
-            padding-top: 4rem;
-          }
-        
-          .hero {
-            padding: 2rem 0 4rem;
-          }
-        
-          .hero-title {
-            font-size: 2rem;
-          }
-        
-          .hero-description {
-            font-size: 1rem;
-          }
-        
-          .btn {
-            padding: 0.75rem 1.5rem;
-            font-size: 0.875rem;
-          }
-        
-          .features,
-          .gallery,
-          .server-info {
-            padding: 4rem 0;
-          }
-        
-          .feature-card,
-          .info-item {
-            padding: 1.5rem;
-          }
-        
-          .countdown {
-            font-size: 1.4rem;
-          }
+
+        .hero-content {
+            max-width: 720px;
         }
-        
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #70b9ff, #0468C0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--md-sys-color-on-surface-variant);
+            margin-bottom: 2rem;
+        }
+
+        /* M3 按钮 */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 24px;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            border-radius: 999px;
+            transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            box-shadow: var(--md-ref-elevation-1);
+        }
+
+        .btn-primary:hover {
+            background-color: #0a71d4;
+            box-shadow: var(--md-ref-elevation-2);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--md-sys-color-on-surface);
+            border: 1px solid var(--md-sys-color-outline);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(4,104,192,0.1);
+            border-color: var(--md-sys-color-primary);
+        }
+
+        /* M3 卡片面板 */
+        .announcement-box {
+            background-color: var(--md-sys-color-surface-variant);
+            border-radius: var(--md-ref-shape-large);
+            padding: 24px;
+            margin: 32px 0;
+            border-left: 6px solid var(--md-sys-color-primary);
+            box-shadow: var(--md-ref-elevation-1);
+            text-align: left;
+        }
+
+        .announcement-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--md-sys-color-primary);
+            margin-bottom: 8px;
+        }
+
+        .version-box {
+            display: inline-block;
+            background: rgba(4,104,192,0.2);
+            padding: 4px 16px;
+            border-radius: 999px;
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: #80caff;
+        }
+
+        /* 特性网格 */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(145deg, #ffffff, #9ac4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--md-sys-color-on-surface-variant);
+            max-width: 680px;
+            margin: 0 auto 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: var(--md-sys-color-surface-variant);
+            border-radius: var(--md-ref-shape-large);
+            padding: 28px;
+            transition: all 0.25s;
+            box-shadow: var(--md-ref-elevation-1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--md-ref-elevation-3);
+            background: #25252d;
+        }
+
+        .feature-icon {
+            background: rgba(4,104,192,0.15);
+            width: 56px;
+            height: 56px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon i {
+            font-size: 28px;
+            color: var(--md-sys-color-primary);
+        }
+
+        .feature-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--md-sys-color-on-surface-variant);
+            line-height: 1.5;
+        }
+
+        /* 画廊区域 */
+        .gallery {
+            background: #0a0a0e;
+            padding: 64px 0;
+        }
+
+        .gallery-item {
+            margin-bottom: 56px;
+            text-align: center;
+        }
+
+        .gallery-item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--md-sys-color-primary);
+            margin-bottom: 20px;
+        }
+
+        .single-image {
+            margin: 20px auto;
+        }
+
+        .single-image img {
+            max-width: 100%;
+            max-height: 480px;
+            border-radius: var(--md-ref-shape-large);
+            box-shadow: var(--md-ref-elevation-2);
+            transition: transform 0.2s;
+            object-fit: cover;
+        }
+
+        .single-image img:hover {
+            transform: scale(1.01);
+        }
+
+        /* 服务器信息 */
+        .server-info {
+            padding: 64px 0;
+            background: var(--md-sys-color-surface);
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .info-item {
+            background: var(--md-sys-color-surface-variant);
+            border-radius: var(--md-ref-shape-large);
+            padding: 32px 16px;
+            text-align: center;
+            box-shadow: var(--md-ref-elevation-1);
+        }
+
+        .info-item h4 {
+            font-size: 1.35rem;
+            color: var(--md-sys-color-primary);
+            margin-bottom: 8px;
+        }
+
+        /* ----- footer 保持最初样式（深色简洁） ----- */
+        .footer {
+            background-color: #111115;
+            color: #b0b0bc;
+            padding: 48px 0 32px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo .logo-img {
+            height: 40px;
+        }
+
+        .footer-logo .logo-text {
+            font-size: 1.35rem;
+            background: none;
+            color: #cbd5e1;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        .footer p {
+            color: #8f9bb3;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px;
+            font-size: 0.8rem;
+            color: #6e7a8e;
+        }
+
+        /* 动画淡入 */
         .fade-in {
-          opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.8s ease, transform 0.8s ease;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
-        
+
         .fade-in.visible {
-          opacity: 1;
-          transform: translateY(0);
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .btn {
+                padding: 8px 20px;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .feature-card {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -586,30 +422,25 @@
     </nav>
 
     <section class="hero">
-        <div class="hero-container">
+        <div class="container hero-container">
             <div class="hero-content fade-in">
                 <h1 class="hero-title">
-                    <span class="gradient-text">Freewd服务器</span>
-                    <br />基岩版 Minecraft 公益服
+                    <span class="gradient-text">Freewd服务器</span><br>
+                    基岩版 Minecraft 公益服
                 </h1>
-                <p>
+                <p class="hero-description">
                     稳定纯净的生存体验，支持 Minecraft 基岩版 1.26.x。禁用苦力怕爆炸，资源安全保护，友好社区氛围，公益自由玩法，自2024年2月开服以来已有两年历史
                 </p>
-
                 <div class="announcement-box fade-in">
                     <div class="announcement-title">Freewd 5.0 开服预告</div>
                     <div class="announcement-content">
-                        Freewd 5.0时代即将开始！咋们今年6月20日不见不散！
+                        Freewd 5.0时代即将开始！今年6月20日不见不散！<br>
                         <div class="version-box">暑假再见</div>
                     </div>
                 </div>
-
-                <div class="hero-buttons">
+                <div class="hero-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
                     <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=4p75f%2FL0lxRwSPMBUCf4C41aNnEDugL%2B0hMx3jqUSp6EvuV8m7ejYJkojs%2BiPB%2Bj&busi_data=eyJncm91cENvZGUiOiIxMTA0MjA3ODkxIiwidG9rZW4iOiJMdFNZanhLaDZxczluMjVOVlNnMXk3Mm1yVnkrM29vaFUyU1hFUGdwMUlVeHlCVlpnY01lanZjcWtVV01pb1N3IiwidWluIjoiMjIxNjM2ODcwNSJ9&data=N2DPMSnSv00Xh19ZZsRtAtmCCba7FTeZd2DHiMb36XJyhsw_F0-jNJHMElPzuj9-IRs-F6zCBamDLx8cNFHl_A&svctype=4&tempid=h5_group_info" class="btn btn-primary">
-                        <i class="fab fa-qq"></i> 加入QQ群获取最新信息
-                    </a>
-                    <a href="https://github.com/blockcarft4979/freewd_community/releases" class="btn btn-secondary">
-                        <i class="fas fa-download"></i> 下载Freewd 社区APP
+                        <i class="fab fa-qq"></i> 加入QQ群
                     </a>
                 </div>
             </div>
@@ -622,30 +453,22 @@
             <p class="section-subtitle fade-in">体验纯净、友好的Minecraft生存服务器，享受真正的游戏乐趣</p>
             <div class="features-grid">
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>安心建造体验</h3>
                     <p>苦力怕不会爆炸，保护玩家建筑成果，让创意不受意外破坏。专注于创造与建设，无需担心心血被毁</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-lock"></i></div>
                     <h3>资源安全保护</h3>
                     <p>保护插件保障个人物品安全，防止盗窃与误操作，游戏更安心！你的努力成果将得到充分保护</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
                     <h3>友好社区氛围</h3>
                     <p>活跃友善的玩家群体与管理团队，为你提供帮助与陪伴，不再孤独生存！一起探索、建造、分享乐趣</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
                     <h3>公益自由玩法</h3>
                     <p>纯净无收费，无强制捐赠，提供纯粹、自由、可持续的游戏体验！回归Minecraft最初的美好</p>
                 </div>
@@ -657,70 +480,19 @@
         <div class="container">
             <h2 class="section-title fade-in">服务器实景展示</h2>
             <p class="section-subtitle fade-in">看看我们的玩家在Minecraft世界中的精彩创作</p>
-            <div class="gallery-container">
-                <!-- 合照单独显示在上方 -->
                 <div class="gallery-item fade-in">
-                    <h3>Freewd 3.0 关服合照</h3>
-                    <div class="single-image">
-                        <img src="/img/index/CoverMain.jpg" alt="Minecraft游戏场景">
-                    </div>
+                    <div class="single-image"><img src="/img/index/MainCover2.jpg" alt="玩家合照"></div>
                 </div>
-
-                <!-- 日常图片单列显示 -->
-                <div class="gallery-item fade-in">
-<h3>Freewd 5.0 server icon</h3>
- <div class="single-image">
-                        <img src="/img/index/Freewd_5.png" alt="Freewd 5.0 icon">
-                    </div>
-                   
-                    <h3>Freewd 3.0 日常</h3>
-                    <div class="single-image">
-                        <img src="/img/index/Cover1.png" alt="Minecraft建筑1">
-                    </div>
-                    <div class="single-image">
-                        <img src="/img/index/Cover2.jpeg" alt="Minecraft建筑2">
-                    </div>
-                    <div class="single-image">
-                        <img src="/img/index/Cover3.jpg" alt="Minecraft建筑3">
-                    </div>
-                    <div class="single-image">
-                        <img src="/img/index/Cover4.jpg" alt="Minecraft建筑4">
-                    </div>
+                <div class="gallery-item fade-in">  
+                    <div class="single-image"><img src="/img/index/Cover5.jpg" alt="Freewd建筑1"></div>
+                    <div class="single-image"><img src="/img/index/Cover6.jpg" alt="Freewd建筑2"></div>
+                    <div class="single-image"><img src="/img/index/Cover7.jpg" alt="Freewd建筑3"></div>
+                    <div class="single-image"><img src="/img/index/Cover8.jpg" alt="Freewd建筑4"></div>
+                    <div class="single-image"><img src="/img/index/Cover9.jpg" alt="Freewd建筑5"></div>
+                    <div class="single-image"><img src="/img/index/Cover10.jpg" alt="Freewd建筑6"></div>
+                    <div class="single-image"><img src="/img/index/Cover11.jpg" alt="Freewd建筑7"></div>
                 </div>
-<!-- 合照单独显示在上方 -->
-                <div class="gallery-item fade-in">
-                    <h3>Freewd 4.0 关服合照</h3>
-                    <div class="single-image">
-                        <img src="/img/index/MainCover2.jpg" alt="Minecraft游戏场景">
-                    </div>
-                </div>
-                <!-- 4.0版本图片单列显示 -->
-                <div class="gallery-item fade-in">
-                    <h3>Freewd 4.0 日常</h3>    
-                    <div class="single-image">
-                        <img src="/img/index/Cover5.jpg" alt="Minecraft建筑1">
-                    </div>
-                    <div class="single-image">
-                        <img src="/img/index/Cover6.jpg" alt="Minecraft建筑2">
-                    </div>
-                    <div class="single-image">
-                        <img src="/img/index/Cover7.jpg" alt="Minecraft建筑3">
-                    </div>
-                    <div class="single-image">
-                        <img src="/img/index/Cover8.jpg" alt="Minecraft建筑4">
-                    </div>
-                    <div class="single-image">
-                        <img src="/img/index/Cover9.jpg" alt="Minecraft建筑5">
-                    </div>
-                    <div class="single-image">
-                        <img src="/img/index/Cover10.jpg" alt="Minecraft建筑6">
-                    </div>
-                    <div class="single-image">
-                        <img src="/img/index/Cover11.jpg" alt="Minecraft建筑7">
-                    </div>
-                </div>
-
-                <div class="announcement-box fade-in" style="margin-top: 3rem;">
+                <div class="announcement-box fade-in" style="margin-top: 2rem;">
                     <div class="announcement-title">新玩家礼遇</div>
                     <div class="announcement-content">
                         初次加入可领取「新手礼包」<br>18颗钻石 + 25份面包<br>助你轻松起步！<br>
@@ -735,20 +507,10 @@
         <div class="container">
             <h2 class="section-title fade-in">服务器信息</h2>
             <p class="section-subtitle fade-in">了解服务器详情，准备加入我们的冒险之旅</p>
-
             <div class="info-cards">
-                <div class="info-item fade-in">
-                    <h4>服务器类型</h4>
-                    <p>纯净生存公益服</p>
-                </div>
-                <div class="info-item fade-in">
-                    <h4>游戏版本</h4>
-                    <p>1.26.x</p>
-                </div>
-                <div class="info-item fade-in">
-                    <h4>开服时间</h4>
-                    <p>6月20日</p>
-                </div>
+                <div class="info-item fade-in"><h4>服务器类型</h4><p>纯净生存公益服</p></div>
+                <div class="info-item fade-in"><h4>游戏版本</h4><p>1.26.x</p></div>
+                <div class="info-item fade-in"><h4>开服时间</h4><p>6月20日</p></div>
             </div>
         </div>
     </section>
@@ -756,13 +518,11 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="/img/index/FreewdIcon.png" alt="Freewd服务器" class="logo-img">
-                        <span class="logo-text">Freewd服务器</span>
-                    </div>
-                    <p>基岩版 Minecraft 公益服，为你带来纯净、友好的游戏体验</p>
+                <div class="footer-logo">
+                    <img src="/img/index/Freewd_5.png" alt="Freewd服务器" class="logo-img">
+                    <span class="logo-text">Freewd服务器</span>
                 </div>
+                <p>基岩版 Minecraft 公益服，为你带来纯净、友好的游戏体验</p>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Freewd | BLOCKCARFT.</p>
@@ -771,20 +531,17 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const fadeElements = document.querySelectorAll('.fade-in');
-        
-          const fadeInObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-              }
-            });
-          }, { threshold: 0.1 });
-        
-          fadeElements.forEach(element => {
-            fadeInObserver.observe(element);
-          });
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            fadeElements.forEach(el => observer.observe(el));
         });
     </script>
 </body>
