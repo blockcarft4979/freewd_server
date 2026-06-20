@@ -1,15 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8" />
-    <meta name='description' content='欢迎来到 Freewd 5.0服务器官方网站，公益服务器 · 纯净无收费 · 透明开放，欢迎每一位玩家的加入与监督！服务器版本：1.26.x，开服时间：2026年6月20日中午12点' />
+    <meta name="description"
+        content="欢迎来到 Freewd 5.0服务器官方网站，公益服务器 · 纯净无收费 · 透明开放，欢迎每一位玩家的加入与监督！服务器版本：1.26.x，已于2026年6月20日中午12点向所有玩家开放" />
     <link rel="icon" type="image/png" href="/img/index/Freewd_5.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Freewd 基岩版 Minecraft 服务器</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -29,9 +32,9 @@
             --md-ref-shape-medium: 16px;
             --md-ref-shape-large: 28px;
             --md-ref-shape-extra-large: 36px;
-            --md-ref-elevation-1: 0 1px 3px 1px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.3);
-            --md-ref-elevation-2: 0 2px 6px 2px rgba(0,0,0,0.15), 0 1px 2px 0 rgba(0,0,0,0.3);
-            --md-ref-elevation-3: 0 4px 8px 3px rgba(0,0,0,0.15), 0 1px 3px 0 rgba(0,0,0,0.3);
+            --md-ref-elevation-1: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --md-ref-elevation-2: 0 2px 6px 2px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --md-ref-elevation-3: 0 4px 8px 3px rgba(0, 0, 0, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.3);
             --navbar-height: 4.5rem;
         }
 
@@ -56,7 +59,7 @@
             padding: 0 24px;
         }
 
-        /* 导航栏 M3 风格 */
+        /* ---------- 导航栏 ---------- */
         .navbar {
             position: fixed;
             top: 0;
@@ -70,7 +73,7 @@
 
         .nav-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             height: 100%;
             padding: 0 24px;
@@ -99,10 +102,88 @@
             letter-spacing: -0.3px;
         }
 
-        /* Hero 区域 */
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--md-sys-color-on-surface-variant);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--md-sys-color-on-surface);
+            border-bottom-color: var(--md-sys-color-primary);
+        }
+
+        /* ---------- 按钮 ---------- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 24px;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            border-radius: 999px;
+            transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            box-shadow: var(--md-ref-elevation-1);
+        }
+
+        .btn-primary:hover {
+            background-color: #0a71d4;
+            box-shadow: var(--md-ref-elevation-2);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--md-sys-color-on-surface);
+            border: 1px solid var(--md-sys-color-outline);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(4, 104, 192, 0.1);
+            border-color: var(--md-sys-color-primary);
+        }
+
+        .btn-join {
+            background: linear-gradient(135deg, #6b8cff, #4a6cf7);
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(59, 93, 231, 0.35);
+            font-size: 1.1rem;
+            padding: 14px 36px;
+        }
+
+        .btn-join:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(59, 93, 231, 0.5);
+            background: linear-gradient(135deg, #7a9aff, #5270f7);
+        }
+
+        .btn-join i {
+            font-size: 1.2rem;
+        }
+
+        /* ---------- Hero ---------- */
         .hero {
             padding: 48px 0 80px;
-            background: radial-gradient(circle at 10% 30%, rgba(4,104,192,0.08), transparent 70%);
+            background: radial-gradient(circle at 10% 30%, rgba(4, 104, 192, 0.08), transparent 70%);
         }
 
         .hero-container {
@@ -138,46 +219,6 @@
             margin-bottom: 2rem;
         }
 
-        /* M3 按钮 */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 10px 24px;
-            font-weight: 600;
-            font-size: 0.9375rem;
-            border-radius: 999px;
-            transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            cursor: pointer;
-            text-decoration: none;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--md-sys-color-primary);
-            color: var(--md-sys-color-on-primary);
-            box-shadow: var(--md-ref-elevation-1);
-        }
-
-        .btn-primary:hover {
-            background-color: #0a71d4;
-            box-shadow: var(--md-ref-elevation-2);
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--md-sys-color-on-surface);
-            border: 1px solid var(--md-sys-color-outline);
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(4,104,192,0.1);
-            border-color: var(--md-sys-color-primary);
-        }
-
-        /* M3 卡片面板 */
         .announcement-box {
             background-color: var(--md-sys-color-surface-variant);
             border-radius: var(--md-ref-shape-large);
@@ -197,15 +238,23 @@
 
         .version-box {
             display: inline-block;
-            background: rgba(4,104,192,0.2);
+            background: rgba(4, 104, 192, 0.2);
             padding: 4px 16px;
             border-radius: 999px;
-            margin-top: 16px;
+            margin-top: 12px;
             font-size: 0.8rem;
             color: #80caff;
         }
 
-        /* 特性网格 */
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        /* ---------- 通用 section ---------- */
         .section-title {
             font-size: 2.2rem;
             font-weight: 700;
@@ -224,9 +273,14 @@
             margin: 0 auto 3rem;
         }
 
+        /* ---------- Features ---------- */
+        .features {
+            padding: 64px 0;
+        }
+
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 28px;
             margin-top: 20px;
         }
@@ -240,13 +294,13 @@
         }
 
         .feature-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-6px);
             box-shadow: var(--md-ref-elevation-3);
             background: #25252d;
         }
 
         .feature-icon {
-            background: rgba(4,104,192,0.15);
+            background: rgba(4, 104, 192, 0.15);
             width: 56px;
             height: 56px;
             border-radius: 20px;
@@ -271,42 +325,38 @@
             line-height: 1.5;
         }
 
-        /* 画廊区域 */
+        /* ---------- Gallery ---------- */
         .gallery {
             background: #0a0a0e;
             padding: 64px 0;
         }
 
-        .gallery-item {
-            margin-bottom: 56px;
-            text-align: center;
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
         }
 
-        .gallery-item h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--md-sys-color-primary);
-            margin-bottom: 20px;
-        }
-
-        .single-image {
-            margin: 20px auto;
-        }
-
-        .single-image img {
-            max-width: 100%;
-            max-height: 480px;
+        .gallery-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
             border-radius: var(--md-ref-shape-large);
             box-shadow: var(--md-ref-elevation-2);
-            transition: transform 0.2s;
-            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .single-image img:hover {
-            transform: scale(1.01);
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+            box-shadow: var(--md-ref-elevation-3);
         }
 
-        /* 服务器信息 */
+        .gallery .announcement-box {
+            margin-top: 48px;
+        }
+
+        /* ---------- Server Info ---------- */
         .server-info {
             padding: 64px 0;
             background: var(--md-sys-color-surface);
@@ -314,7 +364,7 @@
 
         .info-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 24px;
             margin-top: 32px;
         }
@@ -325,21 +375,36 @@
             padding: 32px 16px;
             text-align: center;
             box-shadow: var(--md-ref-elevation-1);
+            transition: transform 0.2s;
+        }
+
+        .info-item:hover {
+            transform: translateY(-4px);
         }
 
         .info-item h4 {
-            font-size: 1.35rem;
+            font-size: 1.2rem;
             color: var(--md-sys-color-primary);
             margin-bottom: 8px;
         }
 
-        /* ----- footer 保持最初样式（深色简洁） ----- */
+        .info-item .status-badge {
+            display: inline-block;
+            background: #2e7d32;
+            padding: 2px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            color: #c8e6c9;
+            margin-top: 6px;
+        }
+
+        /* ---------- Footer ---------- */
         .footer {
             background-color: #111115;
             color: #b0b0bc;
             padding: 48px 0 32px;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .footer-content {
@@ -375,16 +440,20 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding-top: 24px;
             font-size: 0.8rem;
             color: #6e7a8e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
         }
 
-        /* 动画淡入 */
+        /* ---------- Animations ---------- */
         .fade-in {
             opacity: 0;
-            transform: translateY(16px);
+            transform: translateY(20px);
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
 
@@ -393,13 +462,18 @@
             transform: translateY(0);
         }
 
-        /* 响应式 */
+        /* ---------- Responsive ---------- */
         @media (max-width: 700px) {
             .hero-title {
                 font-size: 2.2rem;
             }
             .btn {
-                padding: 8px 20px;
+                padding: 8px 18px;
+                font-size: 0.85rem;
+            }
+            .btn-join {
+                padding: 12px 24px;
+                font-size: 1rem;
             }
             .container {
                 padding: 0 16px;
@@ -407,20 +481,65 @@
             .feature-card {
                 padding: 20px;
             }
+            .nav-links {
+                gap: 16px;
+                font-size: 0.85rem;
+            }
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .gallery-grid img {
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid img {
+                height: 200px;
+            }
+            .nav-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4px;
+            }
+            .nav-links {
+                gap: 12px;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 
 <body>
+    <!-- ===== 导航栏 ===== -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
+            <a href="#" class="nav-logo">
                 <img src="/img/index/Freewd_5.png" alt="Freewd服务器" class="logo-img">
-             </div>
+                
+            </a>
+            <div class="nav-links">
+                <a href="#features">特色</a>
+                <a href="#gallery">画廊</a>
+                <a href="#info">信息</a>
+                <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=4p75f%2FL0lxRwSPMBUCf4C41aNnEDugL%2B0hMx3jqUSp6EvuV8m7ejYJkojs%2BiPB%2Bj&busi_data=eyJncm91cENvZGUiOiIxMTA0MjA3ODkxIiwidG9rZW4iOiJMdFNZanhLaDZxczluMjVOVlNnMXk3Mm1yVnkrM29vaFUyU1hFUGdwMUlVeHlCVlpnY01lanZjcWtVV01pb1N3IiwidWluIjoiMjIxNjM2ODcwNSJ9&data=N2DPMSnSv00Xh19ZZsRtAtmCCba7FTeZd2DHiMb36XJyhsw_F0-jNJHMElPzuj9-IRs-F6zCBamDLx8cNFHl_A&svctype=4&tempid=h5_group_info"
+                   class="btn btn-primary" style="padding:6px 18px; font-size:0.85rem;">
+                    <i class="fab fa-qq"></i> 加群
+                </a>
+            </div>
         </div>
     </nav>
 
-    <section class="hero">
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="home">
         <div class="container hero-container">
             <div class="hero-content fade-in">
                 <h1 class="hero-title">
@@ -428,17 +547,22 @@
                     基岩版 Minecraft 公益服
                 </h1>
                 <p class="hero-description">
-                    稳定纯净的生存体验，支持 Minecraft 基岩版 1.26.x。禁用苦力怕爆炸，资源安全保护，友好社区氛围，公益自由玩法，自2024年2月开服以来已有两年历史
+                    稳定纯净的生存体验，支持 Minecraft 基岩版 1.26.30.x。禁用苦力怕爆炸，资源安全保护，友好社区氛围，公益自由玩法，自2024年2月开服以来已有两年历史。
                 </p>
                 <div class="announcement-box fade-in">
-                    <div class="announcement-title">Freewd 5.0 开服预告</div>
+                    <div class="announcement-title">Freewd 5.0 已正式开放！</div>
                     <div class="announcement-content">
-                        Freewd 5.0时代即将开始！今年6月20日不见不散！<br>
-                        <div class="version-box">暑假再见</div>
+                        <strong>2026年6月20日 中午12:00</strong> 准时开服，欢迎新老玩家回归！<br>
+                        版本 1.26.x · 纯净生存 · 无收费 · 无作弊
+                        <div class="version-box">长期开放 · 暑假精彩不断</div>
                     </div>
                 </div>
-                <div class="hero-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=4p75f%2FL0lxRwSPMBUCf4C41aNnEDugL%2B0hMx3jqUSp6EvuV8m7ejYJkojs%2BiPB%2Bj&busi_data=eyJncm91cENvZGUiOiIxMTA0MjA3ODkxIiwidG9rZW4iOiJMdFNZanhLaDZxczluMjVOVlNnMXk3Mm1yVnkrM29vaFUyU1hFUGdwMUlVeHlCVlpnY01lanZjcWtVV01pb1N3IiwidWluIjoiMjIxNjM2ODcwNSJ9&data=N2DPMSnSv00Xh19ZZsRtAtmCCba7FTeZd2DHiMb36XJyhsw_F0-jNJHMElPzuj9-IRs-F6zCBamDLx8cNFHl_A&svctype=4&tempid=h5_group_info" class="btn btn-primary">
+                <div class="hero-buttons">
+                    <a href="minecraft://?addExternalServer=Freewd|server.freewd.top:42683" class="btn btn-join">
+                        <i class="fab fa-minecraft"></i> 一键加入服务器
+                    </a>
+                    <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=4p75f%2FL0lxRwSPMBUCf4C41aNnEDugL%2B0hMx3jqUSp6EvuV8m7ejYJkojs%2BiPB%2Bj&busi_data=eyJncm91cENvZGUiOiIxMTA0MjA3ODkxIiwidG9rZW4iOiJMdFNZanhLaDZxczluMjVOVlNnMXk3Mm1yVnkrM29vaFUyU1hFUGdwMUlVeHlCVlpnY01lanZjcWtVV01pb1N3IiwidWluIjoiMjIxNjM2ODcwNSJ9&data=N2DPMSnSv00Xh19ZZsRtAtmCCba7FTeZd2DHiMb36XJyhsw_F0-jNJHMElPzuj9-IRs-F6zCBamDLx8cNFHl_A&svctype=4&tempid=h5_group_info"
+                        class="btn btn-secondary">
                         <i class="fab fa-qq"></i> 加入QQ群
                     </a>
                 </div>
@@ -446,6 +570,7 @@
         </div>
     </section>
 
+    <!-- ===== 特色 ===== -->
     <section id="features" class="features">
         <div class="container">
             <h2 class="section-title fade-in">服务器核心特色</h2>
@@ -454,81 +579,107 @@
                 <div class="feature-card fade-in">
                     <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>安心建造体验</h3>
-                    <p>苦力怕不会爆炸，保护玩家建筑成果，让创意不受意外破坏。专注于创造与建设，无需担心心血被毁</p>
+                    <p>苦力怕不会爆炸，保护玩家建筑成果，让创意不受意外破坏。专注于创造与建设，无需担心心血被毁。</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon"><i class="fas fa-lock"></i></div>
                     <h3>资源安全保护</h3>
-                    <p>保护插件保障个人物品安全，防止盗窃与误操作，游戏更安心！你的努力成果将得到充分保护</p>
+                    <p>保护插件保障个人物品安全，防止盗窃与误操作，游戏更安心！你的努力成果将得到充分保护。</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon"><i class="fas fa-users"></i></div>
                     <h3>友好社区氛围</h3>
-                    <p>活跃友善的玩家群体与管理团队，为你提供帮助与陪伴，不再孤独生存！一起探索、建造、分享乐趣</p>
+                    <p>活跃友善的玩家群体与管理团队，为你提供帮助与陪伴，不再孤独生存！一起探索、建造、分享乐趣。</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
                     <h3>公益自由玩法</h3>
-                    <p>纯净无收费，无强制捐赠，提供纯粹、自由、可持续的游戏体验！回归Minecraft最初的美好</p>
+                    <p>纯净无收费，无强制捐赠，提供纯粹、自由、可持续的游戏体验！回归Minecraft最初的美好。</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== 画廊 ===== -->
     <section id="gallery" class="gallery">
         <div class="container">
             <h2 class="section-title fade-in">服务器实景展示</h2>
             <p class="section-subtitle fade-in">看看我们的玩家在Minecraft世界中的精彩创作</p>
-                <div class="gallery-item fade-in">
-                    <div class="single-image"><img src="/img/index/MainCover2.jpg" alt="玩家合照"></div>
-                </div>
-                <div class="gallery-item fade-in">  
-                    <div class="single-image"><img src="/img/index/Cover5.jpg" alt="Freewd建筑1"></div>
-                    <div class="single-image"><img src="/img/index/Cover6.jpg" alt="Freewd建筑2"></div>
-                    <div class="single-image"><img src="/img/index/Cover7.jpg" alt="Freewd建筑3"></div>
-                    <div class="single-image"><img src="/img/index/Cover8.jpg" alt="Freewd建筑4"></div>
-                    <div class="single-image"><img src="/img/index/Cover9.jpg" alt="Freewd建筑5"></div>
-                    <div class="single-image"><img src="/img/index/Cover10.jpg" alt="Freewd建筑6"></div>
-                    <div class="single-image"><img src="/img/index/Cover11.jpg" alt="Freewd建筑7"></div>
-                </div>
-                <div class="announcement-box fade-in" style="margin-top: 2rem;">
-                    <div class="announcement-title">新玩家礼遇</div>
-                    <div class="announcement-content">
-                        初次加入可领取「新手礼包」<br>18颗钻石 + 25份面包<br>助你轻松起步！<br>
-                        无论你是新手还是老玩家，都能快速融入我们的世界，开始你的冒险之旅
-                    </div>
+            <div class="gallery-grid fade-in">
+                <img src="/img/index/MainCover2.jpg" alt="玩家合照">
+                <img src="/img/index/Cover5.jpg" alt="Freewd建筑1">
+                <img src="/img/index/Cover6.jpg" alt="Freewd建筑2">
+                <img src="/img/index/Cover7.jpg" alt="Freewd建筑3">
+                <img src="/img/index/Cover8.jpg" alt="Freewd建筑4">
+                <img src="/img/index/Cover9.jpg" alt="Freewd建筑5">
+                <img src="/img/index/Cover10.jpg" alt="Freewd建筑6">
+                <img src="/img/index/Cover11.jpg" alt="Freewd建筑7">
+            </div>
+            <div class="announcement-box fade-in" style="margin-top: 2rem;">
+                <div class="announcement-title">新玩家礼遇</div>
+                <div class="announcement-content">
+                    初次加入可领取「新手礼包」<br>
+                    <strong>18颗钻石 + 25份面包</strong><br>
+                    助你轻松起步！无论你是新手还是老玩家，都能快速融入我们的世界，开始你的冒险之旅。
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== 服务器信息 ===== -->
     <section id="info" class="server-info">
         <div class="container">
             <h2 class="section-title fade-in">服务器信息</h2>
             <p class="section-subtitle fade-in">了解服务器详情，准备加入我们的冒险之旅</p>
             <div class="info-cards">
-                <div class="info-item fade-in"><h4>服务器类型</h4><p>纯净生存公益服</p></div>
-                <div class="info-item fade-in"><h4>游戏版本</h4><p>1.26.x</p></div>
-                <div class="info-item fade-in"><h4>开服时间</h4><p>6月20日</p></div>
+                <div class="info-item fade-in">
+                    <h4>服务器类型</h4>
+                    <p>纯净生存公益服</p>
+                </div>
+                <div class="info-item fade-in">
+                    <h4>游戏版本</h4>
+                    <p>1.26.x</p>
+                </div>
+                <div class="info-item fade-in">
+                    <h4>开放时间</h4>
+                    <p>2026.6.20 12:00</p>
+                    <span class="status-badge"><i class="fas fa-circle" style="color:#4caf50; font-size:0.6rem; margin-right:4px;"></i> 已开放</span>
+                </div>
+                <div class="info-item fade-in">
+                    <h4>服务器地址</h4>
+                    <p><code style="background:#2a2a30; padding:4px 10px; border-radius:12px;">server.freewd.top:42683</code></p>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:40px;">
+                <a href="minecraft://?addExternalServer=Freewd|server.freewd.top:42683" class="btn btn-join">
+                    <i class="fab fa-minecraft"></i> 立即加入服务器
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- ===== 页脚 ===== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="/img/index/Freewd_5.png" alt="Freewd服务器" class="logo-img">  </div>
+                    <img src="/img/index/Freewd_5.png" alt="Freewd服务器" class="logo-img">
+                    <span class="logo-text">Freewd</span>
+                </div>
                 <p>基岩版 Minecraft 公益服，为你带来纯净、友好的游戏体验</p>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024-2026 Freewd | BLOCKCARFT.</p>
+                <p>&copy; 2024-2026 Freewd Studio | BLOCKCARFT.</p>
+                <a href="/about.html" class="btn btn-secondary" style="font-size:0.85rem;">
+                    <i class="fas fa-info-circle"></i> 关于我们
+                </a>
             </div>
         </div>
     </footer>
 
+    <!-- ===== 滚动动画 ===== -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const fadeElements = document.querySelectorAll('.fade-in');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -542,4 +693,5 @@
         });
     </script>
 </body>
+
 </html>
