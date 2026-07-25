@@ -14,154 +14,13 @@
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 引用公共样式（导航栏、按钮、页脚、基础变量等） -->
+    <link rel="stylesheet" href="https://f2.freewd.top/css/common.css">
     <style>
-        :root {
-            --md-sys-color-primary: #0468C0;
-            --md-sys-color-on-primary: #ffffff;
-            --md-sys-color-primary-container: #084c8a;
-            --md-sys-color-surface: #0f0f12;
-            --md-sys-color-surface-variant: #1e1e24;
-            --md-sys-color-on-surface: #e3e3e8;
-            --md-sys-color-on-surface-variant: #b8b8c4;
-            --md-sys-color-outline: #3e3e48;
-            --md-sys-color-secondary: #b0b0c0;
-            --md-sys-color-error: #cf6679;
-            --md-ref-typeface-brand: 'Inter', -apple-system, BlinkMacSystemFont, system-ui;
-            --md-ref-typeface-plain: 'Inter', sans-serif;
-            --md-ref-shape-small: 8px;
-            --md-ref-shape-medium: 16px;
-            --md-ref-shape-large: 28px;
-            --md-ref-shape-extra-large: 36px;
-            --md-ref-elevation-1: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-            --md-ref-elevation-2: 0 2px 6px 2px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-            --md-ref-elevation-3: 0 4px 8px 3px rgba(0, 0, 0, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.3);
-            --navbar-height: 4.5rem;
-        }
+        /* ===== 本页面独有样式（与 common.css 不重叠） ===== */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            background-color: var(--md-sys-color-surface);
-            color: var(--md-sys-color-on-surface);
-            font-family: var(--md-ref-typeface-plain);
-            line-height: 1.5;
-            padding-top: var(--navbar-height);
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* ---------- 导航栏 ---------- */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 15, 18, 0.85);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            height: var(--navbar-height);
-            box-shadow: var(--md-ref-elevation-1);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-            padding: 0 24px;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-img {
-            height: 40px;
-            width: auto;
-            border-radius: 12px;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 600;
-            background: linear-gradient(135deg, #80caff, #0468C0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.3px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--md-sys-color-on-surface-variant);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
-            padding: 4px 0;
-            border-bottom: 2px solid transparent;
-        }
-
-        .nav-links a:hover {
-            color: var(--md-sys-color-on-surface);
-            border-bottom-color: var(--md-sys-color-primary);
-        }
-
-        /* ---------- 按钮 ---------- */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 10px 24px;
-            font-weight: 600;
-            font-size: 0.9375rem;
-            border-radius: 999px;
-            transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            cursor: pointer;
-            text-decoration: none;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--md-sys-color-primary);
-            color: var(--md-sys-color-on-primary);
-            box-shadow: var(--md-ref-elevation-1);
-        }
-
-        .btn-primary:hover {
-            background-color: #0a71d4;
-            box-shadow: var(--md-ref-elevation-2);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--md-sys-color-on-surface);
-            border: 1px solid var(--md-sys-color-outline);
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(4, 104, 192, 0.1);
-            border-color: var(--md-sys-color-primary);
-        }
-
+        /* 特殊按钮样式（扩展自 common.css 的 .btn） */
         .btn-join {
             background: linear-gradient(135deg, #6b8cff, #4a6cf7);
             color: #fff;
@@ -180,7 +39,7 @@
             font-size: 1.2rem;
         }
 
-        /* ---------- Hero ---------- */
+        /* Hero 区域 */
         .hero {
             padding: 48px 0 80px;
             background: radial-gradient(circle at 10% 30%, rgba(4, 104, 192, 0.08), transparent 70%);
@@ -254,7 +113,7 @@
             margin-top: 12px;
         }
 
-        /* ---------- 通用 section ---------- */
+        /* 通用标题 */
         .section-title {
             font-size: 2.2rem;
             font-weight: 700;
@@ -273,7 +132,7 @@
             margin: 0 auto 3rem;
         }
 
-        /* ---------- Features ---------- */
+        /* 特色卡片 */
         .features {
             padding: 64px 0;
         }
@@ -325,7 +184,7 @@
             line-height: 1.5;
         }
 
-        /* ---------- Gallery ---------- */
+        /* 画廊 */
         .gallery {
             background: #0a0a0e;
             padding: 64px 0;
@@ -356,7 +215,7 @@
             margin-top: 48px;
         }
 
-        /* ---------- Server Info ---------- */
+        /* 服务器信息 */
         .server-info {
             padding: 64px 0;
             background: var(--md-sys-color-surface);
@@ -398,101 +257,26 @@
             margin-top: 6px;
         }
 
-        /* ---------- Footer ---------- */
-        .footer {
-            background-color: #111115;
-            color: #b0b0bc;
-            padding: 48px 0 32px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .footer-logo .logo-img {
-            height: 40px;
-        }
-
-        .footer-logo .logo-text {
-            font-size: 1.35rem;
-            background: none;
-            color: #cbd5e1;
-            -webkit-background-clip: unset;
-            background-clip: unset;
-        }
-
-        .footer p {
-            color: #8f9bb3;
-            font-size: 0.9rem;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 24px;
-            font-size: 0.8rem;
-            color: #6e7a8e;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-        }
-
-        /* ---------- Animations ---------- */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ---------- Responsive ---------- */
+        /* 响应式微调（与独有样式相关） */
         @media (max-width: 700px) {
             .hero-title {
                 font-size: 2.2rem;
             }
-            .btn {
-                padding: 8px 18px;
-                font-size: 0.85rem;
-            }
             .btn-join {
                 padding: 12px 24px;
                 font-size: 1rem;
-            }
-            .container {
-                padding: 0 16px;
-            }
-            .feature-card {
-                padding: 20px;
-            }
-            .nav-links {
-                gap: 16px;
-                font-size: 0.85rem;
-            }
-            .nav-links a {
-                font-size: 0.85rem;
             }
             .gallery-grid {
                 grid-template-columns: 1fr 1fr;
             }
             .gallery-grid img {
                 height: 160px;
+            }
+            .nav-links {
+                gap: 16px;
+            }
+            .nav-links a {
+                font-size: 0.85rem;
             }
         }
 
@@ -503,37 +287,17 @@
             .gallery-grid img {
                 height: 200px;
             }
-            .nav-container {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 4px;
+            .hero-title {
+                font-size: 1.8rem;
             }
             .nav-links {
                 gap: 12px;
-            }
-            .hero-title {
-                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- ===== 导航栏 ===== -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <img src="/img/index/Freewd_5.png" alt="Freewd服务器" class="logo-img">
-                
-            </a>
-            <div class="nav-links">
-                <a href="#features">特色</a>
-                <a href="#gallery">画廊</a>
-                <a href="#info">信息</a>
-            </div>
-        </div>
-    </nav>
-
     <!-- ===== Hero ===== -->
     <section class="hero" id="home">
         <div class="container hero-container">
@@ -655,7 +419,7 @@
         </div>
     </section>
 
-    <!-- ===== 页脚 ===== -->
+    <!-- ===== 页脚（由 common.css 提供样式） ===== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -673,9 +437,9 @@
         </div>
     </footer>
 
-    <!-- ===== 滚动动画 ===== -->
+    <!-- ===== 滚动动画（与 common.css 的 .fade-in 配合） ===== -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const fadeElements = document.querySelectorAll('.fade-in');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
